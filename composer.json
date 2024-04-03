@@ -14,7 +14,6 @@
       "drupal/address": "*",
       "drupal/calendar_view": "*",
       "drupal/smart_date": "*",
-      "kanopi/saplings-content-base": "*",
       "kanopi/saplings-content-types": "*"
   }
 }
