@@ -1,6 +1,6 @@
 {
   "name": "kanopi/saplings-events",
-  "description": "Configuration for Saplings Events.",
+  "description": "Configuration for Saplings Events",
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -12,17 +12,8 @@
   ],
   "require": {
       "drupal/address": "*",
-      "drupal/access_unpublished": "*",
       "drupal/calendar_view": "*",
-      "drupal/field_group": "*",
-      "drupal/pathauto": "*",
-      "drupal/publication_date": "^2.0@beta",
-      "drupal/scheduler": "*",
-      "drupal/scheduler_content_moderation_integration": "^2.0@beta",
-      "drupal/simple_sitemap": "*",
       "drupal/smart_date": "*",
-      "drupal/token_or": "*",
-      "kanopi/saplings-content-base": "*",
       "kanopi/saplings-content-types": "*"
   }
 }
