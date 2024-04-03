@@ -1,17 +1,16 @@
-uuid: 584fc296-d2e1-4eb0-a801-4a1913142192
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sa_header_position
+    - field.storage.node.sa_overlay
     - node.type.sa_event
   module:
     - options
-id: node.sa_event.sa_header_position
-field_name: sa_header_position
+id: node.sa_event.sa_overlay
+field_name: sa_overlay
 entity_type: node
 bundle: sa_event
-label: 'Header Position'
+label: Overlay
 description: ''
 required: false
 translatable: false

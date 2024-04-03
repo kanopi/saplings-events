@@ -1,17 +1,16 @@
-uuid: 8538aa93-89ef-42ce-a148-a47393ce4724
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sa_overlay
+    - field.storage.node.sa_availability
     - node.type.sa_event
   module:
     - options
-id: node.sa_event.sa_overlay
-field_name: sa_overlay
+id: node.sa_event.sa_availability
+field_name: sa_availability
 entity_type: node
 bundle: sa_event
-label: Overlay
+label: Availability
 description: ''
 required: false
 translatable: false

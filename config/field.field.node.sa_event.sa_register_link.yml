@@ -1,21 +1,22 @@
-uuid: 6bf257f5-5f6f-4b60-8559-f698863196da
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sa_availability
+    - field.storage.node.sa_register_link
     - node.type.sa_event
   module:
-    - options
-id: node.sa_event.sa_availability
-field_name: sa_availability
+    - link
+id: node.sa_event.sa_register_link
+field_name: sa_register_link
 entity_type: node
 bundle: sa_event
-label: Availability
+label: 'Register Link'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  title: 1
+  link_type: 17
+field_type: link

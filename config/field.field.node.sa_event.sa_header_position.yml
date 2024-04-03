@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_header_position
+    - node.type.sa_event
+  module:
+    - options
+id: node.sa_event.sa_header_position
+field_name: sa_header_position
+entity_type: node
+bundle: sa_event
+label: 'Header Position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
