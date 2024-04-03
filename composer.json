@@ -1,6 +1,6 @@
 {
   "name": "kanopi/saplings-events",
-  "description": "Configuration for Saplings Events.",
+  "description": "Configuration for Saplings Events",
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
   "authors": [
