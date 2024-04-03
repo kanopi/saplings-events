@@ -6,8 +6,8 @@ dependencies:
     - field.field.node.sa_event.sa_availability
     - field.field.node.sa_event.sa_cost
     - field.field.node.sa_event.sa_currency
-    - field.field.node.sa_event.field_sa_event_category
-    - field.field.node.sa_event.field_sa_event_date
+    - field.field.node.sa_event.sa_event_category
+    - field.field.node.sa_event.sa_event_date
     - field.field.node.sa_event.sa_location
     - field.field.node.sa_event.sa_register_link
     - field.field.node.sa_event.sa_body
@@ -109,7 +109,7 @@ third_party_settings:
     group_details:
       children:
         - sa_location
-        - field_sa_event_date
+        - sa_event_date
         - sa_attendance_mode
         - sa_cost
         - sa_currency
@@ -129,7 +129,7 @@ third_party_settings:
         required_fields: true
     group_relationships:
       children:
-        - field_sa_event_category
+        - sa_event_category
       label: Relationships
       region: content
       parent_name: group_administration
@@ -180,13 +180,13 @@ content:
       size: 10
       placeholder: ''
     third_party_settings: {  }
-  field_sa_event_category:
+  sa_event_category:
     type: options_buttons
     weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_sa_event_date:
+  sa_event_date:
     type: smartdate_inline
     weight: 10
     region: content
