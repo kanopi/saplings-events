@@ -1,0 +1,20 @@
+uuid: 02f9fe80-f31b-4b5d-9ef4-60b7fbe9d633
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.sa_event_category
+field_name: sa_event_category
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

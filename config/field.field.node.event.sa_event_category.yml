@@ -1,0 +1,29 @@
+uuid: ab4f0b01-d648-49e2-a92c-cffc194295fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_event_category
+    - node.type.sa_event
+    - taxonomy.vocabulary.sa_event_category
+id: node.sa_event.sa_event_category
+field_name: sa_event_category
+entity_type: node
+bundle: sa_event
+label: 'sa_event Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sa_event_category: sa_event_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

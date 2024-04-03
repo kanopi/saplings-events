@@ -1,0 +1,42 @@
+uuid: f3fce987-d7bb-47c5-8218-8e0a38d65f34
+langcode: en
+status: true
+dependencies: {  }
+id: node__event
+label: 'Content: Event'
+tags:
+  article_modified_time: '[node:changed:custom:c]'
+  article_published_time: '[node:published:custom:c]'
+  canonical_url: '[current-page:url:absolute]'
+  description: '[node:sa_description|node:sa_seo_description]'
+  image_src: '[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook]'
+  og_description: '[node:sa_description|node:sa_seo_description]'
+  og_image: '[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook]'
+  og_image_alt: '[node:sa_seo_image:entity:field_media_image:alt|node:sa_featured_image:entity:field_media_image:alt]'
+  og_image_height: '[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:height|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:height]'
+  og_image_type: '[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:mimetype|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:mimetype]'
+  og_image_width: '[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:width|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:width]'
+  og_locale: en_US
+  og_site_name: '[site:name]'
+  og_title: '[node:sa_seo_page_title|node:title]'
+  og_type: sa_event
+  og_updated_time: '[node:changed:custom:c]'
+  og_url: '[current-page:url:absolute]'
+  rights: 'Copyright ©[date:html_year] All rights reserved.'
+  schema_event_description: '[node:sa_description|node:sa_seo_description]'
+  schema_event_end_date: '[node:sa_event_date:end_value-custom:?]'
+  schema_event_event_attendance_mode: '[node:sa_attendance_mode]'
+  schema_event_id: '[node:sa_register_link:uri]'
+  schema_event_image: 'a:5:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:150:"[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:url|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:url]";s:5:"width";s:154:"[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:width|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:width]";s:6:"height";s:156:"[node:sa_seo_image:entity:field_media_image:sa_social_media_facebook:height|node:sa_featured_image:entity:field_media_image:sa_social_media_facebook:height]";}'
+  schema_event_name: '[node:sa_seo_page_title|node:title]'
+  schema_event_offers: 'a:7:{s:5:"@type";s:5:"Offer";s:3:"@id";s:26:"[node:sa_register_link]";s:5:"price";s:17:"[node:sa_cost]";s:13:"priceCurrency";s:21:"[node:sa_currency]";s:3:"url";s:26:"[node:sa_register_link]";s:12:"availability";s:25:"[node:sa_availability]";s:8:"category";s:18:"[node:sa_category]";}'
+  schema_event_organizer: 'a:3:{s:5:"@type";s:12:"Organization";s:4:"name";s:11:"[site:name]";s:3:"url";s:10:"[site:url]";}'
+  schema_event_start_date: '[node:sa_event_date:value-custom:?]'
+  schema_event_type: sa_event
+  schema_event_url: '[node:sa_register_link:uri]'
+  title: '[node:sa_seo_page_title|node:title] | [site:name]'
+  twitter_cards_description: '[node:sa_description|node:sa_seo_description]'
+  twitter_cards_image: '[node:sa_seo_image:entity:field_media_image:sa_social_media_x:url|node:sa_featured_image:entity:field_media_image:sa_social_media_x:url]'
+  twitter_cards_image_alt: '[node:sa_seo_image:entity:field_media_image:alt|node:sa_featured_image:entity:field_media_image:alt]'
+  twitter_cards_title: '[node:sa_seo_page_title|node:title]'
+  twitter_cards_type: summary_large_image

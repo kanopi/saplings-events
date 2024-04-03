@@ -1,0 +1,19 @@
+uuid: 09cfd106-ee12-4bb3-a36f-bba5f56767ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_robots
+    - node.type.sa_event
+id: node.sa_event.sa_robots
+field_name: sa_robots
+entity_type: node
+bundle: sa_event
+label: 'Robots meta tag'
+description: "<p>Use this field to customize the Robots meta tag if needed.  If you enter nothing here, the default <code>index, follow</code> is assumed.</p>\r\n\r\n<p>The robots meta tag lets you utilize a granular, page-specific approach to controlling how an individual page should be indexed and served to users in search results.</p>\r\n\r\n<p>Visit Google's <a href=\"https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives\">Valid indexing and serving rules</a> for a full list of options.</p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: b80f88c7-fb04-412f-a6c4-ff5a866ef217
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_event_date
+    - node.type.sa_event
+  module:
+    - smart_date
+id: node.sa_event.sa_event_date
+field_name: sa_event_date
+entity_type: node
+bundle: sa_event
+label: 'sa_event Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
+    min: ''
+    max: ''
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

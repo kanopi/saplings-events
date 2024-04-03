@@ -1,0 +1,30 @@
+uuid: 6db64569-9eaa-4549-9566-f65851cf938e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.sa_availability
+field_name: sa_availability
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: instock
+      label: 'In Stock'
+    -
+      value: soldout
+      label: 'Sold Out'
+    -
+      value: preorder
+      label: 'Pre Order'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

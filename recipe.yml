@@ -1,0 +1,40 @@
+name: 'Saplings - Events'
+description: 'Configuration for Saplings Events'
+type: 'Site'
+recipes:
+  - saplings-content-base
+  - saplings-content-types
+install:
+  # Contrib.
+  - address
+  - calendar_view
+  - calendar_view_multiday
+  - schema_event
+  - smart_date
+  - smart_date_recur
+config:
+  actions:
+    # Set permissions for anonymous role.
+    user.role.anonymous:
+      ensure_exists:
+        id: anonymous
+      grantPermissions:
+        - 'access_unpublished node sa_event'
+    # Set permissions for content editor role.
+    user.role.content_editor:
+      ensure_exists:
+        id: content_editor
+      grantPermissions:
+        - 'access_unpublished node sa_event'
+        - 'clone sa_event content'
+        - 'create sa_event content'
+        - 'create terms in sa_event_category'
+        - 'delete own sa_event content'
+        - 'delete sa_event revisions'
+        - 'edit any sa_event content'
+        - 'edit own sa_event content'
+        - 'edit terms in sa_event_category'
+        - 'revert sa_event revisions'
+        - 'set sa_event published on date'
+        - 'view any unpublished sa_event content'
+        - 'view sa_event revisions'

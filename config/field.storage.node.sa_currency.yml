@@ -1,0 +1,21 @@
+uuid: 61c7dfd9-b925-407e-9e47-6b00877d6fb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sa_currency
+field_name: sa_currency
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

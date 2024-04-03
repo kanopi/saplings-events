@@ -1,0 +1,21 @@
+uuid: 1ad5b0fd-88ec-4b55-8e09-926417d3ccf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_attendance_mode
+    - node.type.sa_event
+  module:
+    - options
+id: node.sa_event.sa_attendance_mode
+field_name: sa_attendance_mode
+entity_type: node
+bundle: sa_event
+label: 'Attendance Mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
