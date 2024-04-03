@@ -1,8 +1,6 @@
 name: 'Saplings - Events'
 description: 'Configuration for Saplings Events'
 type: 'Site'
-recipes:
-  - saplings-content-types
 install:
   # Contrib.
   - address
