@@ -24,3 +24,11 @@ Welcome to the Saplings-Events repository, the central hub for managing everythi
 
 2. **[kanopi/saplings-content-types](https://github.com/kanopi/saplings-content-types)**
    - Handles content types.
+  
+## Patches
+
+smart_date may throw an error that looks like this:
+```
+* 		User deprecated function: Passing a string to Drupal\options\Plugin\Field\FieldType\ListItemBase::extractAllowedValues() is deprecated in drupal:10.2.0 and will cause an error from drupal:11.0.0. Use an array instead. See https://www.drupal.org/node/3376368 in Drupal\options\Plugin\Field\FieldType\ListItemBase::extractAllowedValues() (line 406 of core/modules/options/src/Plugin/Field/FieldType/ListItemBase.php).
+```
+To fix this, you can apply [this patch](https://www.drupal.org/project/smart_date/issues/3409287)
