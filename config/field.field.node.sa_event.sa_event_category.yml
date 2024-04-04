@@ -9,7 +9,7 @@ id: node.sa_event.sa_event_category
 field_name: sa_event_category
 entity_type: node
 bundle: sa_event
-label: 'sa_event Category'
+label: 'Event Category'
 description: ''
 required: false
 translatable: false
