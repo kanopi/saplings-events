@@ -10,7 +10,7 @@ id: node.sa_event.sa_event_date
 field_name: sa_event_date
 entity_type: node
 bundle: sa_event
-label: 'sa_event Date'
+label: 'Event Date'
 description: ''
 required: false
 translatable: false
