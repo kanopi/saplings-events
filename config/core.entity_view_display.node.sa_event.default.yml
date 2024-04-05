@@ -4,19 +4,19 @@ dependencies:
   config:
     - field.field.node.sa_event.sa_attendance_mode
     - field.field.node.sa_event.sa_availability
-    - field.field.node.sa_event.sa_cost
-    - field.field.node.sa_event.sa_currency
-    - field.field.node.sa_event.sa_event_category
-    - field.field.node.sa_event.sa_event_date
-    - field.field.node.sa_event.sa_location
-    - field.field.node.sa_event.sa_register_link
     - field.field.node.sa_event.sa_body
     - field.field.node.sa_event.sa_components
+    - field.field.node.sa_event.sa_cost
+    - field.field.node.sa_event.sa_currency
     - field.field.node.sa_event.sa_description
+    - field.field.node.sa_event.sa_event_category
+    - field.field.node.sa_event.sa_event_date
     - field.field.node.sa_event.sa_featured_image
     - field.field.node.sa_event.sa_header_position
     - field.field.node.sa_event.sa_hide_header
+    - field.field.node.sa_event.sa_location
     - field.field.node.sa_event.sa_overlay
+    - field.field.node.sa_event.sa_register_link
     - field.field.node.sa_event.sa_robots
     - field.field.node.sa_event.sa_seo_description
     - field.field.node.sa_event.sa_seo_image
@@ -32,6 +32,8 @@ dependencies:
     - smart_date
     - text
     - user
+_core:
+  default_config_hash: 0k8g4avmASLItQgMFjXjpOVrfuKL8ThmRddcyCyKRcM
 id: node.sa_event.default
 targetEntityType: node
 bundle: sa_event
@@ -39,77 +41,17 @@ mode: default
 content:
   sa_attendance_mode:
     type: list_default
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 8
     region: content
   sa_availability:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 9
-    region: content
-  sa_cost:
-    type: number_decimal
-    label: above
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  sa_currency:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  sa_event_date:
-    type: smartdate_default
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium
-      format: default
-      force_chronological: false
-      add_classes: false
-      time_wrapper: true
-      localize: false
-      parts:
-        - start
-        - end
-      duration:
-        separator: ' | '
-        unit: ''
-        decimals: 2
-        suffix: h
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  sa_location:
-    type: address_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  sa_register_link:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 12
     region: content
   sa_body:
     type: text_default
@@ -143,6 +85,33 @@ content:
             classes: {  }
     weight: 7
     region: content
+  sa_cost:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings:
+      nomarkup:
+        enabled: false
+        separator: '|'
+        referenced_entity: ''
+    weight: 10
+    region: content
+  sa_currency:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      nomarkup:
+        enabled: true
+        separator: '|'
+        referenced_entity: ''
+    weight: 11
+    region: content
   sa_description:
     type: basic_string
     label: hidden
@@ -153,6 +122,28 @@ content:
         separator: '|'
         referenced_entity: ''
     weight: 5
+    region: content
+  sa_event_date:
+    type: smartdate_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        - start
+        - end
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
+    third_party_settings: {  }
+    weight: 4
     region: content
   sa_featured_image:
     type: entity_reference_entity_view
@@ -178,6 +169,13 @@ content:
         referenced_entity: ''
     weight: 1
     region: content
+  sa_location:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   sa_overlay:
     type: list_key
     label: hidden
@@ -189,10 +187,27 @@ content:
         referenced_entity: ''
     weight: 2
     region: content
+  sa_register_link:
+    type: link_class
+    label: hidden
+    settings:
+      class: 'btn btn-primary'
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      nomarkup:
+        enabled: false
+        separator: '|'
+        referenced_entity: ''
+    weight: 12
+    region: content
 hidden:
-  sa_event_category: true
   links: true
   published_at: true
+  sa_event_category: true
   sa_hide_header: true
   sa_robots: true
   sa_seo_description: true
