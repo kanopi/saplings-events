@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: Event
 type: sa_event
-description: ''
+description: 'Used to display Events on the site.'
 help: ''
 new_revision: true
 preview_mode: 1
