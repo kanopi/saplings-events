@@ -13,6 +13,7 @@
   "require": {
       "drupal/address": "*",
       "drupal/calendar_view": "*",
+      "drupal/link_attributes": "*",
       "drupal/smart_date": "*"
   }
 }
