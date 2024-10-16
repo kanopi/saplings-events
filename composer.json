@@ -7,7 +7,7 @@
       "drupal/access_unpublished": "*",
       "drupal/events": "*",
       "drupal/events_calendar": "*",
-      "drupal/events_location": "*",
+      "drupal/events_locations": "*",
       "drupal/link_attributes": "*",
       "drupal/publication_date": "*",
       "drupal/quick_node_clone": "*",
