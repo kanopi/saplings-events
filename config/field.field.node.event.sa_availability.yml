@@ -1,15 +1,9 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - field.storage.node.sa_availability
-    - node.type.sa_event
-  module:
-    - options
-id: node.sa_event.sa_availability
+id: node.event.sa_availability
 field_name: sa_availability
 entity_type: node
-bundle: sa_event
+bundle: event
 label: Availability
 description: ''
 required: false

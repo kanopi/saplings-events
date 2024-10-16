@@ -18,7 +18,7 @@ tags:
   og_locale: en_US
   og_site_name: '[site:name]'
   og_title: '[node:sa_seo_page_title|node:title]'
-  og_type: sa_event
+  og_type: event
   og_updated_time: '[node:changed:custom:c]'
   og_url: '[current-page:url:absolute]'
   rights: 'Copyright ©[date:html_year] All rights reserved.'
@@ -31,7 +31,7 @@ tags:
   schema_event_offers: 'a:7:{s:5:"@type";s:5:"Offer";s:3:"@id";s:26:"[node:sa_register_link]";s:5:"price";s:17:"[node:sa_cost]";s:13:"priceCurrency";s:21:"[node:sa_currency]";s:3:"url";s:26:"[node:sa_register_link]";s:12:"availability";s:25:"[node:sa_availability]";s:8:"category";s:18:"[node:sa_category]";}'
   schema_event_organizer: 'a:3:{s:5:"@type";s:12:"Organization";s:4:"name";s:11:"[site:name]";s:3:"url";s:10:"[site:url]";}'
   schema_event_start_date: '[node:sa_event_date:value-custom:?]'
-  schema_event_type: sa_event
+  schema_event_type: event
   schema_event_url: '[node:sa_register_link:uri]'
   title: '[node:sa_seo_page_title|node:title] | [site:name]'
   twitter_cards_description: '[node:sa_description|node:sa_seo_description]'

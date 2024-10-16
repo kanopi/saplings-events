@@ -1,15 +1,9 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - field.storage.node.sa_register_link
-    - node.type.sa_event
-  module:
-    - link
-id: node.sa_event.sa_register_link
+id: node.event.sa_register_link
 field_name: sa_register_link
 entity_type: node
-bundle: sa_event
+bundle: event
 label: 'Register Link'
 description: ''
 required: false

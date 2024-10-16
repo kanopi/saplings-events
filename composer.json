@@ -1,19 +1,16 @@
 {
   "name": "kanopi/saplings-events",
-  "description": "Configuration for Saplings Events",
+  "description": "Creates an Event system.",
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
-  "authors": [
-      {
-          "name": "Taylor Wills",
-          "homepage": "https://kanopi.com",
-          "role": "Maintainer"
-      }
-  ],
   "require": {
-      "drupal/address": "*",
-      "drupal/calendar_view": "*",
+      "drupal/access_unpublished": "*",
+      "drupal/events": "*",
+      "drupal/events_calendar": "*",
+      "drupal/events_location": "*",
       "drupal/link_attributes": "*",
-      "drupal/smart_date": "*"
+      "drupal/publication_date": "*",
+      "drupal/quick_node_clone": "*",
+      "drupal/schema_metatag": "*"
   }
 }

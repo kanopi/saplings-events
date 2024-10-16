@@ -1,0 +1,14 @@
+langcode: en
+status: true
+id: node.event.sa_currency
+field_name: sa_currency
+entity_type: node
+bundle: event
+label: Currency
+description: 'The three-letter currency code (i.e. USD) in which the price is displayed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
