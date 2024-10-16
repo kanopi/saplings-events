@@ -4,7 +4,7 @@ type: 'Site'
 recipes:
   - events
   - events_calendar
-  - events_location
+  - events_locations
 install:
   # Core.
   - image
@@ -25,13 +25,13 @@ config:
   actions:
     # Set permissions for anonymous role.
     user.role.anonymous:
-      ensure_exists:
+      createIfNotExists:
         id: anonymous
       grantPermissions:
         - 'access_unpublished node event'
     # Set permissions for content editor role.
     user.role.content_editor:
-      ensure_exists:
+      createIfNotExists:
         id: content_editor
       grantPermissions:
         - 'access_unpublished node event'
@@ -47,3 +47,5 @@ config:
         - 'set event published on date'
         - 'view any unpublished event content'
         - 'view event revisions'
+    #core.entity_view_display.node.event.default:
+      #setComponents:
