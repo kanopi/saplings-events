@@ -13,6 +13,7 @@
       "drupal/quick_node_clone": "*",
       "drupal/schema_metatag": "*",
       "drupal/token": "*",
-      "drupal/token_or": "*"
+      "drupal/token_or": "*",
+      "drupal/view_unpublished": "*"
   }
 }
