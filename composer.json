@@ -11,6 +11,8 @@
       "drupal/link_attributes": "*",
       "drupal/publication_date": "*",
       "drupal/quick_node_clone": "*",
-      "drupal/schema_metatag": "*"
+      "drupal/schema_metatag": "*",
+      "drupal/token": "*",
+      "drupal/token_or": "*"
   }
 }
