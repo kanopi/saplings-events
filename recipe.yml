@@ -1,5 +1,5 @@
 name: 'Saplings - Events'
-description: 'Configuration for Saplings Events'
+description: 'Creates an Search Engine Optimized Event system.'
 type: 'Site'
 recipes:
   - events
@@ -17,10 +17,14 @@ install:
   # Contrib.
   - access_unpublished
   - metatag
+  - metatag_open_graph
+  - metatag_twitter_cards
   - pathauto
   - publication_date
   - quick_node_clone
   - schema_event
+  - token
+  - token_or
 config:
   actions:
     # Set permissions for anonymous role.
