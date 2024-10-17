@@ -2,6 +2,7 @@ name: 'Saplings - Events'
 description: 'Creates an Search Engine Optimized Event system.'
 type: 'Site'
 recipes:
+  - core/recipes/content_editor_role
   - events
   - events_calendar
   - events_locations
