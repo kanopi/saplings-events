@@ -17,6 +17,7 @@ install:
   - taxonomy
   # Contrib.
   - access_unpublished
+  - field_group
   - metatag
   - metatag_open_graph
   - metatag_twitter_cards
@@ -53,5 +54,108 @@ config:
         - 'set event published on date'
         - 'view any unpublished event content'
         - 'view event revisions'
-    #core.entity_view_display.node.event.default:
-      #setComponents:
+    core.entity_form_display.node.event.default:
+      setComponents:
+        -
+          name: published_at
+          options:
+            type: publication_date_timestamp
+            weight: 15
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_attendance_mode
+          options:
+            type: options_select
+            weight: 4
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_availability
+          options:
+            type: options_select
+            weight: 7
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_cost
+          options:
+            type: number
+            weight: 11
+            region: content
+            settings:
+              placeholder: ''
+            third_party_settings: {  }
+        -
+          name: sa_currency
+          options:
+            type: options_select
+            weight: 12
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_event_category
+          options:
+            type: entity_reference_autocomplete
+            weight: 10
+            region: content
+            settings:
+              match_operator: CONTAINS
+              match_limit: 10
+              size: 60
+              placeholder: ''
+            third_party_settings: {  }
+        -
+          name: sa_event_status
+          options:
+            type: options_select
+            weight: 5
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_event_type
+          options:
+            type: options_select
+            weight: 8
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_register_link
+          options:
+            type: link_default
+            weight: 13
+            region: content
+            settings:
+              placeholder_url: ''
+              placeholder_title: ''
+            third_party_settings: {  }
+        -
+          name: sa_validfrom
+          options:
+            type: datetime_default
+            weight: 9
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_virtuallocation
+          options:
+            type: link_default
+            weight: 6
+            region: content
+            settings:
+              placeholder_url: ''
+              placeholder_title: ''
+            third_party_settings: {  }
+      hideComponents:
+        - uid
+        - path
+    core.entity_view_display.node.event.*:
+      hideComponents:
+        - links
