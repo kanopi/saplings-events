@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.sa_event_type
+field_name: sa_event_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: event
+      label: Event
+    -
+      value: businessevent
+      label: BusinessEvent
+    -
+      value: childrensevent
+      label: ChildrensEvent
+    -
+      value: comedyevent
+      label: ComedyEvent
+    -
+      value: courseinstance
+      label: CourseInstance
+    -
+      value: danceevent
+      label: DanceEvent
+    -
+      value: deliveryevent
+      label: DeliveryEvent
+    -
+      value: educationevent
+      label: EducationEvent
+    -
+      value: eventseries
+      label: EventSeries
+    -
+      value: exhibitionevent
+      label: ExhibitionEvent
+    -
+      value: festival
+      label: Festival
+    -
+      value: foodevent
+      label: FoodEvent
+    -
+      value: hackathon
+      label: Hackathon
+    -
+      value: literaryevent
+      label: LiteraryEvent
+    -
+      value: musicevent
+      label: MusicEvent
+    -
+      value: publicationevent
+      label: PublicationEvent
+    -
+      value: broadcastevent
+      label: BroadcastEvent
+    -
+      value: ondemaandevent
+      label: OnDemandEvent
+    -
+      value: saleevent
+      label: SaleEvent
+    -
+      value: screeningevent
+      label: ScreeningEvent
+    -
+      value: socialevent
+      label: SocialEvent
+    -
+      value: sportsevent
+      label: SportsEvent
+    -
+      value: theaterevent
+      label: TheaterEvent
+    -
+      value: userinteraction
+      label: UserInteraction
+    -
+      value: visualartsevent
+      label: VisualArtsEvent
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

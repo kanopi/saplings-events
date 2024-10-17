@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_event_status
+    - node.type.event
+  module:
+    - options
+id: node.event.sa_event_status
+field_name: sa_event_status
+entity_type: node
+bundle: event
+label: 'Event Status'
+description: "The status of the event. If you don't use this field, Google understands the <code>eventStatus</code> to be <code>EventScheduled</code>. You can use multiple statuses, if applicable (for example, if an event was both rescheduled and moved online). "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

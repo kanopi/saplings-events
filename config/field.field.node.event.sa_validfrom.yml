@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_validfrom
+    - node.type.event
+  module:
+    - datetime
+id: node.event.sa_validfrom
+field_name: sa_validfrom
+entity_type: node
+bundle: event
+label: 'Valid from'
+description: 'The date and time when tickets go on sale (only required on date-restricted offers).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

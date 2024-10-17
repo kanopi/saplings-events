@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_event_type
+    - node.type.event
+  module:
+    - options
+id: node.event.sa_event_type
+field_name: sa_event_type
+entity_type: node
+bundle: event
+label: 'Event type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: event
+default_value_callback: ''
+settings: {  }
+field_type: list_string

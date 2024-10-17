@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_currency
+    - node.type.event
+  module:
+    - options
+id: node.event.sa_currency
+field_name: sa_currency
+entity_type: node
+bundle: event
+label: Currency
+description: 'The currency of the cost.'
+required: false
+translatable: false
+default_value:
+  -
+    value: USD
+default_value_callback: ''
+settings: {  }
+field_type: list_string
