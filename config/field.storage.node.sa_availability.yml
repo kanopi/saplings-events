@@ -11,13 +11,13 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: instock
+      value: InStock
       label: 'In Stock'
     -
-      value: soldout
+      value: SoldOut
       label: 'Sold Out'
     -
-      value: preorder
+      value: PreOrder
       label: 'Pre Order'
   allowed_values_function: ''
 module: options

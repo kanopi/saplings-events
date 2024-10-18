@@ -11,13 +11,13 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: offlineeventattendancemode
+      value: OfflineEventAttendanceMode
       label: 'In person'
     -
-      value: onlineeventattendancemode
+      value: OnlineEventAttendanceMode
       label: Online
     -
-      value: mixedeventattendancemode
+      value: MixedEventAttendanceMode
       label: Mixed
   allowed_values_function: ''
 module: options

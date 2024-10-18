@@ -2,19 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sa_attendance_mode
-    - node.type.sa_event
+    - field.storage.node.sa_event_type
+    - node.type.event
   module:
     - options
-id: node.sa_event.sa_attendance_mode
-field_name: sa_attendance_mode
+id: node.event.sa_event_type
+field_name: sa_event_type
 entity_type: node
-bundle: sa_event
-label: 'Attendance Mode'
+bundle: event
+label: 'Event type'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: Event
 default_value_callback: ''
 settings: {  }
 field_type: list_string

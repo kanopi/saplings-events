@@ -3,15 +3,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.sa_register_link
-    - node.type.sa_event
+    - node.type.event
   module:
     - link
-id: node.sa_event.sa_register_link
+id: node.event.sa_register_link
 field_name: sa_register_link
 entity_type: node
-bundle: sa_event
-label: 'Register Link'
-description: ''
+bundle: event
+label: 'Registration link'
+description: 'Use this to link to a registration or a place to purchase tickets.'
 required: false
 translatable: false
 default_value: {  }

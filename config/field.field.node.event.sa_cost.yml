@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_cost
+    - node.type.event
+id: node.event.sa_cost
+field_name: sa_cost
+entity_type: node
+bundle: event
+label: Cost
+description: "<p>The lowest available price available for your tickets, including service charges and fees. Don't forget to update it as prices change or tickets sell out.</p>\r\n\r\n<p>If the event is available without payment, fees, or service charges, set the price to <code>0</code>.</p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

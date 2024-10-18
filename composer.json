@@ -1,19 +1,22 @@
 {
   "name": "kanopi/saplings-events",
-  "description": "Configuration for Saplings Events",
+  "description": "Creates a Search Engine Optimized Event system.",
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
-  "authors": [
-      {
-          "name": "Taylor Wills",
-          "homepage": "https://kanopi.com",
-          "role": "Maintainer"
-      }
-  ],
   "require": {
-      "drupal/address": "*",
-      "drupal/calendar_view": "*",
+      "drupal/access_unpublished": "*",
+      "drupal/events": "*",
+      "drupal/events_calendar": "*",
+      "drupal/events_locations": "*",
+      "drupal/field_group": "*",
       "drupal/link_attributes": "*",
-      "drupal/smart_date": "*"
+      "drupal/publication_date": "*",
+      "drupal/quick_node_clone": "*",
+      "drupal/schema_metatag": "*",
+      "drupal/token": "*",
+      "drupal/token_or": "*",
+      "drupal/view_unpublished": "*",
+      "kanopi/saplings-content-base-header": "*",
+      "kanopi/saplings-content-base-seo": "*"
   }
 }

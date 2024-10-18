@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_attendance_mode
+    - node.type.event
+  module:
+    - options
+id: node.event.sa_attendance_mode
+field_name: sa_attendance_mode
+entity_type: node
+bundle: event
+label: 'Attendance Mode'
+description: "Indicates whether the event occurs online, offline at a physical location, or a mix of both online and offline. If you don't include this property, Google understands the event mode to be <code>OfflineEventAttendanceMode</code>, which means Google understands that the event is happening at a physical location"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sa_availability
+    - node.type.event
+  module:
+    - options
+id: node.event.sa_availability
+field_name: sa_availability
+entity_type: node
+bundle: event
+label: Availability
+description: "<p>One of the following:</p>\r\n<ul>\r\n  <li><code>InStock</code>: Event tickets are in stock.</li>\r\n  <li><code>SoldOut</code>: Event tickets are sold out.</li>\r\n  <li><code>PreOrder</code>: Event tickets are available for preorder.</li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

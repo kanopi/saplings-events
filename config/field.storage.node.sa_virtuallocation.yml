@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - address
+    - link
     - node
-id: node.sa_location
-field_name: sa_location
+id: node.sa_virtuallocation
+field_name: sa_virtuallocation
 entity_type: node
-type: address
+type: link
 settings: {  }
-module: address
+module: link
 locked: false
 cardinality: 1
 translatable: true

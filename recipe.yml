@@ -1,38 +1,329 @@
 name: 'Saplings - Events'
-description: 'Configuration for Saplings Events'
+description: 'Creates a Search Engine Optimized Event system.'
 type: 'Site'
+recipes:
+  - core/recipes/content_editor_role
+  - events
+  - events_calendar
+  - events_locations
+  - saplings-content-base-header
+  - saplings-content-base-seo
 install:
-  # Contrib.
-  - address
-  - calendar_view
-  - calendar_view_multiday
+  # Core.
+  - image
+  - link
   - link_attributes
+  - media
+  - node
+  - options
+  - taxonomy
+  # Contrib.
+  - access_unpublished
+  - field_group
+  - metatag
+  - metatag_open_graph
+  - metatag_twitter_cards
+  - pathauto
+  - publication_date
+  - quick_node_clone
   - schema_event
-  - smart_date
-  - smart_date_recur
+  - token
+  - token_or
+  - view_unpublished
 config:
   actions:
+    # Set fields on the Event form.
+    core.entity_form_display.node.event.default:
+      setComponents:
+        -
+          name: published_at
+          options:
+            type: publication_date_timestamp
+            weight: 16
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_attendance_mode
+          options:
+            type: options_buttons
+            weight: 4
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_availability
+          options:
+            type: options_select
+            weight: 8
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_cost
+          options:
+            type: number
+            weight: 10
+            region: content
+            settings:
+              placeholder: ''
+            third_party_settings: {  }
+        -
+          name: sa_currency
+          options:
+            type: options_select
+            weight: 11
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_event_category
+          options:
+            type: options_buttons
+            weight: 5
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_event_status
+          options:
+            type: options_buttons
+            weight: 3
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_event_type
+          options:
+            type: options_select
+            weight: 6
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_register_link
+          options:
+            type: link_default
+            weight: 12
+            region: content
+            settings:
+              placeholder_url: ''
+              placeholder_title: ''
+            third_party_settings: {  }
+        -
+          name: sa_validfrom
+          options:
+            type: datetime_default
+            weight: 9
+            region: content
+            settings: {  }
+            third_party_settings: {  }
+        -
+          name: sa_virtuallocation
+          options:
+            type: link_default
+            weight: 4
+            region: content
+            settings:
+              placeholder_url: ''
+              placeholder_title: ''
+            third_party_settings: {  }
+      # Moves fields into Tabs.
+      setThirdPartySettings:
+        - module: field_group
+          key: group_administration
+          value:
+            children:
+              - group_content
+              - group_location
+              - group_event_details
+              - group_event_pricing
+            label: Administration
+            region: content
+            parent_name: ''
+            weight: 1
+            format_type: tabs
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              direction: horizontal
+              width_breakpoint: 640
+        - module: field_group
+          key: group_content
+          value:
+            children:
+              - body
+            label: Content
+            region: content
+            parent_name: group_administration
+            weight: 21
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_event_details
+          value:
+            children:
+              - field_when
+              - sa_event_status
+              - sa_attendance_mode
+              - sa_event_category
+              - sa_event_type
+            label: 'Event details'
+            region: content
+            parent_name: group_administration
+            weight: 23
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_event_pricing
+          value:
+            children:
+              - sa_availability
+              - sa_validfrom
+              - sa_cost
+              - sa_currency
+              - sa_register_link
+            label: 'Event pricing'
+            region: content
+            parent_name: group_administration
+            weight: 24
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_location
+          value:
+            children:
+              - field_where
+              - sa_virtuallocation
+            label: 'Location or URL'
+            region: content
+            parent_name: group_administration
+            weight: 22
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+      # Removes fields we don't use.
+      hideComponents:
+        - promote
+        - sticky
+    # Location form.
+    core.entity_form_display.node.location.default:
+      # Move content into tabs.
+      setThirdPartySettings:
+        - module: field_group
+          key: group_administration
+          value:
+            children:
+              - group_content
+            label: Administration
+            region: content
+            parent_name: ''
+            weight: 1
+            format_type: tabs
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              direction: horizontal
+              width_breakpoint: 640
+        - module: field_group
+          key: group_content
+          value:
+            children:
+              - field_location_address
+              - field_location_telephone
+              - body
+            label: Content
+            region: content
+            parent_name: group_administration
+            weight: 21
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+      # Hides fields we don't use.
+      hideComponents:
+        - promote
+        - sticky
+    # Hide links on all Event displays.
+    core.entity_view_display.node.event.*:
+      hideComponent: links
+    # Hide links on all Location displays.
+    core.entity_view_display.node.location.*:
+      hideComponent: links
+    # Set the default country in the address field.
+    field.field.node.location.field_location_address:
+      setDefaultValue:
+        langcode: null
+        country_code: US
+        administrative_area: ''
+        locality: ''
+        dependent_locality: null
+        postal_code: ''
+        sorting_code: null
+        address_line1: ''
+        address_line2: ''
+        address_line3: null
+        organization: null
+        given_name: null
+        additional_name: null
+        family_name: null
     # Set permissions for anonymous role.
     user.role.anonymous:
-      ensure_exists:
+      createIfNotExists:
         id: anonymous
       grantPermissions:
-        - 'access_unpublished node sa_event'
+        - 'access_unpublished node event'
     # Set permissions for content editor role.
     user.role.content_editor:
-      ensure_exists:
+      createIfNotExists:
         id: content_editor
       grantPermissions:
-        - 'access_unpublished node sa_event'
-        - 'clone sa_event content'
-        - 'create sa_event content'
+        - 'access_unpublished node event'
+        - 'clone event content'
+        - 'create event content'
         - 'create terms in sa_event_category'
-        - 'delete own sa_event content'
-        - 'delete sa_event revisions'
-        - 'edit any sa_event content'
-        - 'edit own sa_event content'
+        - 'delete own event content'
+        - 'delete event revisions'
+        - 'edit any event content'
+        - 'edit own event content'
         - 'edit terms in sa_event_category'
-        - 'revert sa_event revisions'
-        - 'set sa_event published on date'
-        - 'view any unpublished sa_event content'
-        - 'view sa_event revisions'
+        - 'revert event revisions'
+        - 'set event published on date'
+        - 'view any unpublished event content'
+        - 'view event revisions'
