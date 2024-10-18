@@ -6,6 +6,7 @@ recipes:
   - events
   - events_calendar
   - events_locations
+  - saplings-content-base-header
   - saplings-content-base-seo
 install:
   # Core.
