@@ -232,8 +232,8 @@ config:
               required_fields: true
       # Removes fields we don't use.
       hideComponents:
-        - uid
-        - path
+        - promote
+        - sticky
     # Location form.
     core.entity_form_display.node.location.default:
       # Move content into tabs.
@@ -275,13 +275,33 @@ config:
               formatter: closed
               description: ''
               required_fields: true
-      Hides fields we don't use.
+      # Hides fields we don't use.
       hideComponents:
-        - uid
-        - path
+        - promote
+        - sticky
+    # Hide links on all Event displays.
+    core.entity_view_display.node.event.*:
+      hideComponent: links
     # Hide links on all Location displays.
     core.entity_view_display.node.location.*:
       hideComponent: links
+    # Set the default country in the address field.
+    field.field.node.location.field_location_address:
+      setDefaultValue:
+        langcode: null
+        country_code: US
+        administrative_area: ''
+        locality: ''
+        dependent_locality: null
+        postal_code: ''
+        sorting_code: null
+        address_line1: ''
+        address_line2: ''
+        address_line3: null
+        organization: null
+        given_name: null
+        additional_name: null
+        family_name: null
     # Set permissions for anonymous role.
     user.role.anonymous:
       createIfNotExists:
