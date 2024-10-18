@@ -60,23 +60,23 @@ config:
           name: published_at
           options:
             type: publication_date_timestamp
-            weight: 15
+            weight: 16
             region: content
             settings: {  }
             third_party_settings: {  }
         -
           name: sa_attendance_mode
           options:
-            type: options_select
-            weight: 4
-            region: content
-            settings: {  }
-            third_party_settings: {  }
+          type: options_buttons
+          weight: 4
+          region: content
+          settings: {  }
+          third_party_settings: {  }
         -
           name: sa_availability
           options:
             type: options_select
-            weight: 7
+            weight: 8
             region: content
             settings: {  }
             third_party_settings: {  }
@@ -84,7 +84,7 @@ config:
           name: sa_cost
           options:
             type: number
-            weight: 11
+            weight: 10
             region: content
             settings:
               placeholder: ''
@@ -93,27 +93,23 @@ config:
           name: sa_currency
           options:
             type: options_select
-            weight: 12
+            weight: 11
             region: content
             settings: {  }
             third_party_settings: {  }
         -
           name: sa_event_category
           options:
-            type: entity_reference_autocomplete
-            weight: 10
+            type: options_buttons
+            weight: 5
             region: content
-            settings:
-              match_operator: CONTAINS
-              match_limit: 10
-              size: 60
-              placeholder: ''
+            settings: {  }
             third_party_settings: {  }
         -
           name: sa_event_status
           options:
-            type: options_select
-            weight: 5
+            type: options_buttons
+            weight: 3
             region: content
             settings: {  }
             third_party_settings: {  }
@@ -121,7 +117,7 @@ config:
           name: sa_event_type
           options:
             type: options_select
-            weight: 8
+            weight: 6
             region: content
             settings: {  }
             third_party_settings: {  }
@@ -129,7 +125,7 @@ config:
           name: sa_register_link
           options:
             type: link_default
-            weight: 13
+            weight: 12
             region: content
             settings:
               placeholder_url: ''
@@ -147,12 +143,154 @@ config:
           name: sa_virtuallocation
           options:
             type: link_default
-            weight: 6
+            weight: 4
             region: content
             settings:
               placeholder_url: ''
               placeholder_title: ''
             third_party_settings: {  }
+      setThirdPartySettings:
+        - module: field_group
+          key: group_seo
+          value:
+            children:
+              - field_seo_title
+              - field_seo_description
+              - field_seo_image
+              - field_seo_analysis
+            label: 'Search Engine Optimization (SEO) Information'
+            region: content
+            parent_name: ''
+            weight: 50
+            format_type: details
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: group_seo
+              label_as_html: false
+              open: false
+              description: ''
+              required_fields: false
+      setThirdPartySettings:
+        - module: field_group
+          key: group_administration
+          value:
+            children:
+              - group_summary
+              - group_content
+              - group_location
+              - group_event_details
+              - group_event_pricing
+            label: Administration
+            region: content
+            parent_name: ''
+            weight: 1
+            format_type: tabs
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              direction: horizontal
+              width_breakpoint: 640
+        - module: field_group
+          key: group_content
+          value:
+            children:
+              - body
+            label: Content
+            region: content
+            parent_name: group_administration
+            weight: 21
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_summary
+          value:
+            children: {  }
+            label: Summary
+            region: content
+            parent_name: group_administration
+            weight: 20
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: open
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_event_details
+          value:
+            children:
+              - field_when
+              - sa_event_status
+              - sa_attendance_mode
+              - sa_event_category
+              - sa_event_type
+            label: 'Event details'
+            region: content
+            parent_name: group_administration
+            weight: 23
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_event_pricing
+          value:
+            children:
+              - sa_availability
+              - sa_validfrom
+              - sa_cost
+              - sa_currency
+              - sa_register_link
+            label: 'Event pricing'
+            region: content
+            parent_name: group_administration
+            weight: 24
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+        - module: field_group
+          key: group_location
+          value:
+            children:
+              - field_where
+              - sa_virtuallocation
+            label: 'Location or URL'
+            region: content
+            parent_name: group_administration
+            weight: 22
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
       hideComponents:
         - uid
         - path

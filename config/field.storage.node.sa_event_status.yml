@@ -11,20 +11,20 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: eventscheduled
-      label: EventScheduled
+      value: EventScheduled
+      label: Scheduled
     -
-      value: eventcancelled
-      label: EventCancelled
+      value: EventCancelled
+      label: Cancelled
     -
-      value: eventmovedonline
-      label: EventMovedOnline
+      value: EventMovedOnline
+      label: 'Moved Online'
     -
-      value: eventpostponed
-      label: EventPostponed
+      value: EventPostponed
+      label: Postponed
     -
-      value: eventrescheduled
-      label: EventRescheduled
+      value: EventRescheduled
+      label: Rescheduled
   allowed_values_function: ''
 module: options
 locked: false
