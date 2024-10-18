@@ -15,6 +15,7 @@
       "drupal/schema_metatag": "*",
       "drupal/token": "*",
       "drupal/token_or": "*",
-      "drupal/view_unpublished": "*"
+      "drupal/view_unpublished": "*",
+      "kanopi/saplings-content-base-seo": "*"
   }
 }
