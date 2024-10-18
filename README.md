@@ -2,7 +2,7 @@
 
 # Saplings Events
 
-Creates an Search Engine Optimized Event system.
+Creates a Search Engine Optimized Event system.
 
 - Applies Drupal CMS' Events, Events Locations, and Events Calendar Recipes.
 - Adds an Event Category taxonomy with a few terms.

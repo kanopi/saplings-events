@@ -1,5 +1,5 @@
 name: 'Saplings - Events'
-description: 'Creates an Search Engine Optimized Event system.'
+description: 'Creates a Search Engine Optimized Event system.'
 type: 'Site'
 recipes:
   - core/recipes/content_editor_role
@@ -31,30 +31,7 @@ install:
   - view_unpublished
 config:
   actions:
-    # Set permissions for anonymous role.
-    user.role.anonymous:
-      createIfNotExists:
-        id: anonymous
-      grantPermissions:
-        - 'access_unpublished node event'
-    # Set permissions for content editor role.
-    user.role.content_editor:
-      createIfNotExists:
-        id: content_editor
-      grantPermissions:
-        - 'access_unpublished node event'
-        - 'clone event content'
-        - 'create event content'
-        - 'create terms in sa_event_category'
-        - 'delete own event content'
-        - 'delete event revisions'
-        - 'edit any event content'
-        - 'edit own event content'
-        - 'edit terms in sa_event_category'
-        - 'revert event revisions'
-        - 'set event published on date'
-        - 'view any unpublished event content'
-        - 'view event revisions'
+    # Set fields on the Event form.
     core.entity_form_display.node.event.default:
       setComponents:
         -
@@ -150,33 +127,12 @@ config:
               placeholder_url: ''
               placeholder_title: ''
             third_party_settings: {  }
+      # Moves fields into Tabs.
       setThirdPartySettings:
-        - module: field_group
-          key: group_seo
-          value:
-            children:
-              - field_seo_title
-              - field_seo_description
-              - field_seo_image
-              - field_seo_analysis
-            label: 'Search Engine Optimization (SEO) Information'
-            region: content
-            parent_name: ''
-            weight: 50
-            format_type: details
-            format_settings:
-              classes: ''
-              show_empty_fields: false
-              id: group_seo
-              label_as_html: false
-              open: false
-              description: ''
-              required_fields: false
         - module: field_group
           key: group_administration
           value:
             children:
-              - group_summary
               - group_content
               - group_location
               - group_event_details
@@ -209,23 +165,6 @@ config:
               id: ''
               label_as_html: false
               formatter: closed
-              description: ''
-              required_fields: true
-        - module: field_group
-          key: group_summary
-          value:
-            children: {  }
-            label: Summary
-            region: content
-            parent_name: group_administration
-            weight: 20
-            format_type: tab
-            format_settings:
-              classes: ''
-              show_empty_fields: false
-              id: ''
-              label_as_html: false
-              formatter: open
               description: ''
               required_fields: true
         - module: field_group
@@ -291,8 +230,79 @@ config:
               formatter: closed
               description: ''
               required_fields: true
+      # Removes fields we don't use.
       hideComponents:
         - uid
         - path
-    core.entity_view_display.node.event.*:
+    # Location form.
+    core.entity_form_display.node.location.default:
+      # Move content into tabs.
+      setThirdPartySettings:
+        - module: field_group
+          key: group_administration
+          value:
+            children:
+              - group_content
+            label: Administration
+            region: content
+            parent_name: ''
+            weight: 1
+            format_type: tabs
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              direction: horizontal
+              width_breakpoint: 640
+        - module: field_group
+          key: group_content
+          value:
+            children:
+              - field_location_address
+              - field_location_telephone
+              - body
+            label: Content
+            region: content
+            parent_name: group_administration
+            weight: 21
+            format_type: tab
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              formatter: closed
+              description: ''
+              required_fields: true
+      Hides fields we don't use.
+      hideComponents:
+        - uid
+        - path
+    # Hide links on all Location displays.
+    core.entity_view_display.node.location.*:
       hideComponent: links
+    # Set permissions for anonymous role.
+    user.role.anonymous:
+      createIfNotExists:
+        id: anonymous
+      grantPermissions:
+        - 'access_unpublished node event'
+    # Set permissions for content editor role.
+    user.role.content_editor:
+      createIfNotExists:
+        id: content_editor
+      grantPermissions:
+        - 'access_unpublished node event'
+        - 'clone event content'
+        - 'create event content'
+        - 'create terms in sa_event_category'
+        - 'delete own event content'
+        - 'delete event revisions'
+        - 'edit any event content'
+        - 'edit own event content'
+        - 'edit terms in sa_event_category'
+        - 'revert event revisions'
+        - 'set event published on date'
+        - 'view any unpublished event content'
+        - 'view event revisions'

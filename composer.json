@@ -1,6 +1,6 @@
 {
   "name": "kanopi/saplings-events",
-  "description": "Creates an Event system.",
+  "description": "Creates a Search Engine Optimized Event system.",
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
   "require": {
