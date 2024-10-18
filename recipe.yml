@@ -67,11 +67,11 @@ config:
         -
           name: sa_attendance_mode
           options:
-          type: options_buttons
-          weight: 4
-          region: content
-          settings: {  }
-          third_party_settings: {  }
+            type: options_buttons
+            weight: 4
+            region: content
+            settings: {  }
+            third_party_settings: {  }
         -
           name: sa_availability
           options:
@@ -171,7 +171,6 @@ config:
               open: false
               description: ''
               required_fields: false
-      setThirdPartySettings:
         - module: field_group
           key: group_administration
           value:
@@ -295,5 +294,4 @@ config:
         - uid
         - path
     core.entity_view_display.node.event.*:
-      hideComponents:
-        - links
+      hideComponent: links
