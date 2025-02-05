@@ -1,7 +1,8 @@
 langcode: en
 status: true
-third_party_settings: { }
+dependencies: {  }
 name: 'Event Category'
 vid: sa_event_category
 description: 'Provides a way to categorize your events by shared characteristics or types. E.g. class, in-person, online, seminar.'
 weight: 0
+new_revision: false
