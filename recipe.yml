@@ -31,6 +31,18 @@ install:
   - token_or
   - view_unpublished
 config:
+  strict:
+    - field.storage.node.sa_attendance_mode
+    - field.storage.node.sa_availability
+    - field.storage.node.sa_cost
+    - field.storage.node.sa_currency
+    - field.storage.node.sa_event_category
+    - field.storage.node.sa_event_status
+    - field.storage.node.sa_event_type
+    - field.storage.node.sa_register_link
+    - field.storage.node.sa_validfrom
+    - field.storage.node.sa_virtuallocation
+    - taxonomy.vocabulary.sa_event_category
   actions:
     # Set fields on the Event form.
     core.entity_form_display.node.event.default:
