@@ -5,7 +5,7 @@
   "license": "GPL-2.0-or-later",
   "require": {
       "drupal/access_unpublished": "*",
-      "drupal/core": ">=10.4",
+      "drupal/core": "^10.4 || ^11",
       "drupal/events": "*",
       "drupal/events_calendar": "*",
       "drupal/events_locations": "*",
